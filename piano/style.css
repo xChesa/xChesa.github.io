@@ -1,0 +1,42 @@
+body {
+    background-color: green;
+}
+
+.container {
+    height: 100vh;
+    width: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+kbd {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    border: gray outset 5px;
+    width: 10%;
+}
+
+.white-keys kbd {
+    line-height: 5000%;
+    height: 50%;
+    color: black;
+    background-color: white;
+}
+
+.black-keys kbd {
+    margin: 0 2%;
+    z-index: 1;
+    left: 5%;
+    width: 6%;
+    height: 25%;
+    color: white;
+    background-color: black;
+    line-height: 2500%;
+}
+
+.secondSet {
+    left: 16.5% !important;
+}
