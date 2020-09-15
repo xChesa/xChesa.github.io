@@ -1,0 +1,14 @@
+body {
+    background-color: green;
+}
+
+.navPanel {
+    height: 2vh;
+    max-height: 2vh;
+}
+
+.navButton {
+    width: 10%;
+    max-width: 10%;
+    border: gray outset;
+}
