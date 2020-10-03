@@ -1,0 +1,64 @@
+.background {
+    background-color: #181a1b;
+}
+
+.quizArea {
+    width: 99vw;
+    height: 96vh;
+    background-image: url("assets/world.png");
+    background-size: 99vw 96vh;
+    color: #CD5D67;
+    font-family: 'Sansita Swashed', cursive;
+    font-size: large;
+    margin: auto;
+    text-align: center;
+}
+
+.card-grid {
+    height: 75%;
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    column-gap: 10px;
+    grid-template-rows: repeat(3, 250px);
+    row-gap: 10px;
+    justify-content: center;
+}
+
+.card-container {
+    perspective: 2000px;
+}
+
+.card {
+    font-size: xx-large;
+    border-radius: 5%;
+    height: 250px;
+    width: 250px;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    border-radius: 5%;
+}
+
+.front {
+    background-color: beige;
+    color: #CD5D67;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back {
+    background-color: #CD5D67;
+    color: beige;
+    z-index: 0;
+    transform: rotateY(180deg);
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
