@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copypasta</title>
+  <script>
+    function generateCopypasta() {
+      const pastas = {
+        "million-fans-emoji" : "If <INSERTNAME> has 🈶 a million 😂3️⃣ fans, 🪁 then 🤪 I 👨‍🦽 am 🥲 one 😄 of them. 🤷💔😂 If <INSERTNAME> has 👏 ten 🕙 fans, 🪁 then 🙄 I 😊 am 😳 one 👺 of them. 👯‍♀️ If <INSERTNAME> has 👏 only 🕦 one 🙀 fan 😭 then 😵 that 💃 is me. 😸😸 If <INSERTNAME> has 🈶 no 👎 fans, 🏃🏾‍♂️🏃🏽‍♀️🏃🏼‍♀️ then 😠 that 😤 means 😏 I 👹 am 👹😈 no 🚫 longer 😒 on 👄 earth. 🌎 If the world 🌏 is against 🚫 <INSERTNAME>, then 😪 I 💰👀 am 🔞 against ✊✊ the world. 💀💀💀",
+        "million-fans-code" : "if (<INSERTNAME>.fans.length >= 1000000) {<br />&ensp;console.log(<INSERTNAME>.fans.includes(me));<br />&ensp;// -> true 💯<br />} else if (<INSERTNAME>.fans.length === 1) {<br />&ensp;console.log(<INSERTNAME>.fans[0]) ;<br />&ensp;// -> me 🙋<br />} else if (!<INSERTNAME>.fans.length) {<br />&ensp;console.log(world.includes(me));<br />&ensp;// -> false 😔<br />}",
+      }
+      let name = document.getElementById("name-box").value;
+      let pastaTemplate = pastas[document.querySelector('input[name="copypasta-type"]:checked').value];
+      document.getElementById("pasta").innerHTML = pastaTemplate.replaceAll('<INSERTNAME>', name);
+        console.log(pastaTemplate.replaceAll('<INSERTNAME>', name));
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <input type="radio" id="million-fans-emoji-button" name="copypasta-type" value="million-fans-emoji">
+    <label for="million-fans-emoji-button">Million Fans Emoji</label><br>
+    <input type="radio" id="million-fans-code-button" name="copypasta-type" value="million-fans-code">
+    <label for="million-fans-code-button">Million Fans Code</label><br>
+    <label for="name-box">Enter Name: </label>
+    <input type="text" id="name-box" name="name-box">
+    <button onclick="generateCopypasta()">Generate Copypasta</button>
+    <div id="pasta"></div>
+  </div>
+</body>
+</html>
