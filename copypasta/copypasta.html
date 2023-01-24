@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copypasta</title>
+  <link rel="stylesheet" href="style.css">
   <script>
     function generateCopypasta() {
       const pastas = {
@@ -12,9 +13,26 @@
         "million-fans-code" : "if (<INSERTNAME>.fans.length >= 1000000) {<br />&ensp;console.log(<INSERTNAME>.fans.includes(me));<br />&ensp;// -> true 💯<br />} else if (<INSERTNAME>.fans.length === 1) {<br />&ensp;console.log(<INSERTNAME>.fans[0]) ;<br />&ensp;// -> me 🙋<br />} else if (!<INSERTNAME>.fans.length) {<br />&ensp;console.log(world.includes(me));<br />&ensp;// -> false 😔<br />}",
       }
       let name = document.getElementById("name-box").value;
-      let pastaTemplate = pastas[document.querySelector('input[name="copypasta-type"]:checked').value];
-      document.getElementById("pasta").innerHTML = pastaTemplate.replaceAll('<INSERTNAME>', name);
-        console.log(pastaTemplate.replaceAll('<INSERTNAME>', name));
+      let pastaTemplate = document.querySelector('input[name="copypasta-type"]:checked').value;
+
+      if (pastaTemplate === 'million-fans-emoji-zoom') {
+        const elem = document.getElementById("pasta");
+        elem.className = "zoom-background";
+
+        
+        const color = document.getElementById("zoom-background-color-box").value.replaceAll('#', '');
+        elem.style.backgroundColor = '#' + (color === '' ? 'FAEDCD' : color);
+
+        pastaTemplate = "million-fans-emoji";
+      } else {
+        document.getElementById("pasta").style.backgroundColor = null;
+        document.getElementById("pasta").className = null;
+      }
+
+      document.getElementById("pasta").innerHTML = pastas[pastaTemplate].replaceAll('<INSERTNAME>', name);
+      console.log(pastas[pastaTemplate])
+      console.log(pastaTemplate);
+      console.log(pastaTemplate.replaceAll('<INSERTNAME>', name));
     }
   </script>
 </head>
@@ -23,10 +41,22 @@
     <input type="radio" id="million-fans-emoji-button" name="copypasta-type" value="million-fans-emoji">
     <label for="million-fans-emoji-button">Million Fans Emoji</label><br>
     <input type="radio" id="million-fans-code-button" name="copypasta-type" value="million-fans-code">
+
     <label for="million-fans-code-button">Million Fans Code</label><br>
+    <div>
+    <input type="radio" id="million-fans-zoom-button" name="copypasta-type" value="million-fans-emoji-zoom">
+    <label for="million-fans-zoom-button">Million Fans Emoji Zoom Background</label><br>
+
+    <label for="zoom-background-color-box">&emsp;&emsp;Enter Zoom Background Color: </label>
+    <input type="text" id="zoom-background-color-box" name="zoom-background-color-box" placeholder="FAEDCD">
+    </div>
+
+    <br />
+
     <label for="name-box">Enter Name: </label>
     <input type="text" id="name-box" name="name-box">
     <button onclick="generateCopypasta()">Generate Copypasta</button>
+    <br /><br />
     <div id="pasta"></div>
   </div>
 </body>
