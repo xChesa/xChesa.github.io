@@ -1,12 +1,56 @@
 body {
-    background-color: #696969;
+    align-items: center;
+    background-color: #292C33;
+    display: flex;
+    flex-direction: column;
+    height: 97vh;
+    justify-content: center;
 }
 
-.navPanel {
-    max-height: 2vh;
+#container {
+
 }
 
-.navButton {
-    max-width: 10%;
-    border: gray outset;
+.const-name {
+    color: #CD9AE5;
+}
+
+.var-name {
+    color: #F9E7CB;
+}
+
+.colon {
+    color: #B5DDD7;
+}
+
+.comma {
+    color: #AE93AA;
+}
+
+.level-1-bracket {
+    color: #DF584F;
+}
+
+.level-2-bracket {
+    color: #EDE17A;
+}
+
+.level-3-bracket {
+    color: #91C35F;
+}
+
+.level-4-bracket {
+    color: #5C81BC;
+}
+
+.property-name {
+    color: #BCBCBC;
+}
+
+.property-value {
+    color: #EBB0C6;
+}
+
+.square-brackets {
+    color: #D279D7;
 }
