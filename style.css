@@ -3,7 +3,7 @@ body {
     background-color: #292C33;
     display: flex;
     flex-direction: column;
-    height: 97vh;
+    font-family: 'Courier New', monospace;
     justify-content: center;
 }
 
