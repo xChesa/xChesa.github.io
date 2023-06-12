@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     font-family: 'Courier New', monospace;
     justify-content: center;
+    min-height: 100dvh;
 }
 
 .const-name {
