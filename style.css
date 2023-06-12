@@ -5,6 +5,31 @@ body {
     flex-direction: column;
     font-family: 'Courier New', monospace;
     justify-content: center;
+    min-height: 100dvh;
+}
+
+@media screen and (max-width: 600px) {
+    #container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    #container {
+        max-width: 75%;
+    }
+}
+
+.entry {
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 1em;
+}
+
+.value {
+    padding-left: 1.5em;
+    text-indent: -1em;
 }
 
 .const-name {
